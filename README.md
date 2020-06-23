@@ -8,13 +8,21 @@
 本项目是基于 Remix 0.7.7版本进行了简单汉化，以方便中文用户使用。
 同时，本版本提供了用于生成Docker image文件的脚本Dockerfile和entrypoint.sh.
 
-构建Docker image后
+首先启动DOCKER，确定Dockerfile文件和remix-chn.tar.gz文件在当前目录下，
+然后构建Docker image：
 ```bash
- docker create .--tag 4c0n/remix-ide
- 
+ docker build --tag remix-ide-chn:1.0 .
+```
+
+创建成功之后会显示创建DOCKER IMAGE的信息：
+```bash
+Successfully built 2f1bab58c81b
+Successfully tagged remix-ide-chn:1.0
+```
+
 Docker 容器可以启动如下： 
 ```bash
-docker run -itd -p8080:8080 -p65520:65520 -v/path/to/your/solidity/files/:/app 4c0n/remix-ide
+docker run -itd -p8080:8080 -p65520:65520 remix-ide-chn:1.0
 ```
 成功启动容器后，可以使用 url 访问浏览器的重新混合 IDE：http://localhost:8080
 

@@ -1,6 +1,7 @@
 .vscode
 build
 node_modules
+*.gz
 reports
 soljson.js
 soljson.js.*
